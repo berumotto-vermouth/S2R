@@ -1,0 +1,27 @@
+nohup: ignoring input
+Scale Factor: X2 	ZSSR: True 	Real Image: False
+************************************************************
+STARTED KernelGAN on: "/home/sheminghao/smh/trytry/test_2k/woman_x2/woman.png"...
+None
+(152, 94, 3) (152, 94, 3)
+  0%|                              | 0/3000 [00:00<?, ?it/s]  0%|                              | 0/3000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 80, in <module>
+    main()
+  File "train.py", line 57, in main
+    train(conf)
+  File "train.py", line 33, in train
+    gan.train(g_in, d_in)
+  File "/home/sheminghao/smh/KernelGAN/kernelGAN.py", line 80, in train
+    self.train_g()
+  File "/home/sheminghao/smh/KernelGAN/kernelGAN.py", line 91, in train_g
+    g_pred = self.G.forward(self.g_input)
+  File "/home/sheminghao/smh/KernelGAN/networks.py", line 28, in forward
+    downscaled = self.first_layer(input_tensor)
+  File "/home/sheminghao/miniconda3/envs/asr/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sheminghao/miniconda3/envs/asr/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 447, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/sheminghao/miniconda3/envs/asr/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 444, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Calculated padded input size per channel: (96 x 2). Kernel size: (7 x 7). Kernel size can't be greater than actual input size
