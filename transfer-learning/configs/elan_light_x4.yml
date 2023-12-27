@@ -1,0 +1,39 @@
+# model: 'elan'
+## parameters for plain
+scale: 2
+
+rgb_range: 255
+colors: 3
+m_elan: 24
+c_elan: 60
+n_share: 1
+r_expand: 2
+act_type: 'relu'
+window_sizes: [4, 8, 16]
+pretrain: /home/shared_data/smh/elan-fp32-x2-2023-0308-1427/models/model_x2_165.pt
+
+## parameters for model training
+patch_size: 256
+batch_size: 16
+data_repeat: 80
+data_augment: 1
+
+epochs: 1000
+lr: 0.0002
+decays: [250, 400, 450, 475, 500]
+gamma: 0.5
+log_every: 100
+test_every: 1
+log_path: "./experiments"
+log_name:
+
+## hardware specification
+gpu_ids: [0, 1, 2, 3]
+threads: 8
+
+## data specification
+# data_path: '/home/xindongzhang/SR_datasets'
+data_path: '/mnt/HD1/DIV2K'
+test_path: '/home/sheminghao/smh/ELAN'
+cache_path: '/mnt/HD1/smh'
+eval_sets: ['Set5']
